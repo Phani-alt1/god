@@ -1,0 +1,673 @@
+html:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>College Library Management System</h1>
+    <p>Search, Borrow and Manage Books</p>
+</header>
+
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('books')">Books</button>
+    <button onclick="showSection('register')">Register</button>
+    <button onclick="showSection('login')">Login</button>
+    <button onclick="showSection('admin')">Admin</button>
+    <button onclick="showSection('history')">My History</button>
+    <button onclick="showSection('materials')">Materials</button>
+    <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+
+<!-- HOME -->
+
+<section id="home">
+
+    <h2>Welcome to College Library</h2>
+
+    <p>
+        Our library provides books and study materials
+        for students and staff.
+    </p>
+
+    <h3>Library Features</h3>
+
+    <ul>
+        <li>Search Books</li>
+        <li>Book Details</li>
+        <li>Student Registration</li>
+        <li>Book Borrowing</li>
+        <li>Borrowing History</li>
+        <li>Fine Calculation</li>
+        <li>Study Materials</li>
+    </ul>
+
+</section>
+
+
+<!-- BOOK SEARCH -->
+
+<section id="books" class="hidden">
+
+    <h2>Search Books</h2>
+
+    <input type="text"
+           id="searchBook"
+           placeholder="Enter book name"
+           onkeyup="searchBooks()">
+
+    <div id="bookList">
+
+        <div class="book">
+            <h3>Java Programming</h3>
+            <p>Author: James Gosling</p>
+            <p>Year: 2024</p>
+
+            <button onclick="viewBook('Java Programming')">
+                View Details
+            </button>
+        </div>
+
+        <div class="book">
+            <h3>Web Development</h3>
+            <p>Author: Tim Berners-Lee</p>
+            <p>Year: 2023</p>
+
+            <button onclick="viewBook('Web Development')">
+                View Details
+            </button>
+        </div>
+
+        <div class="book">
+            <h3>Database Systems</h3>
+            <p>Author: Abraham Silberschatz</p>
+            <p>Year: 2022</p>
+
+            <button onclick="viewBook('Database Systems')">
+                View Details
+            </button>
+        </div>
+
+        <div class="book">
+            <h3>Operating Systems</h3>
+            <p>Author: William Stallings</p>
+            <p>Year: 2021</p>
+
+            <button onclick="viewBook('Operating Systems')">
+                View Details
+            </button>
+        </div>
+
+    </div>
+
+    <p id="bookDetails"></p>
+
+</section>
+
+
+<!-- REGISTER -->
+
+<section id="register" class="hidden">
+
+    <h2>Student Registration</h2>
+
+    <input type="text"
+           id="regName"
+           placeholder="Enter Name">
+
+    <br>
+
+    <input type="email"
+           id="regEmail"
+           placeholder="Enter Email">
+
+    <br>
+
+    <input type="password"
+           id="regPassword"
+           placeholder="Enter Password">
+
+    <br>
+
+    <button onclick="register()">
+        Register
+    </button>
+
+    <p id="registerMessage"></p>
+
+</section>
+
+
+<!-- LOGIN -->
+
+<section id="login" class="hidden">
+
+    <h2>Student Login</h2>
+
+    <input type="email"
+           id="loginEmail"
+           placeholder="Enter Email">
+
+    <br>
+
+    <input type="password"
+           id="loginPassword"
+           placeholder="Enter Password">
+
+    <br>
+
+    <button onclick="login()">
+        Login
+    </button>
+
+    <p id="loginMessage"></p>
+
+</section>
+
+
+<!-- ADMIN -->
+
+<section id="admin" class="hidden">
+
+    <h2>Librarian Admin</h2>
+
+    <h3>Add Book</h3>
+
+    <input type="text"
+           id="newBook"
+           placeholder="Book Name">
+
+    <button onclick="addBook()">
+        Add Book
+    </button>
+
+
+    <h3>Issue Book</h3>
+
+    <input type="text"
+           id="studentName"
+           placeholder="Student Name">
+
+    <input type="text"
+           id="issueBook"
+           placeholder="Book Name">
+
+    <button onclick="issueBook()">
+        Issue Book
+    </button>
+
+
+    <h3>Return Book / Fine</h3>
+
+    <input type="number"
+           id="lateDays"
+           placeholder="Late Days">
+
+    <button onclick="calculateFine()">
+        Calculate Fine
+    </button>
+
+    <p id="fineResult"></p>
+
+
+    <h3>Book List</h3>
+
+    <div id="adminBookList"></div>
+
+</section>
+
+
+<!-- BORROW HISTORY -->
+
+<section id="history" class="hidden">
+
+    <h2>My Borrow History</h2>
+
+    <table>
+
+        <tr>
+            <th>Book</th>
+            <th>Issue Date</th>
+            <th>Expiry Date</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>Java Programming</td>
+            <td>01-09-2026</td>
+            <td>15-09-2026</td>
+            <td>Issued</td>
+        </tr>
+
+        <tr>
+            <td>Web Development</td>
+            <td>10-08-2026</td>
+            <td>24-08-2026</td>
+            <td>Returned</td>
+        </tr>
+
+    </table>
+
+</section>
+
+
+<!-- MATERIALS -->
+
+<section id="materials" class="hidden">
+
+    <h2>Study Materials</h2>
+
+    <select id="materialYear">
+
+        <option value="2026">2026</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+
+    </select>
+
+
+    <select id="semester">
+
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+
+    </select>
+
+
+    <button onclick="searchMaterial()">
+        Search
+    </button>
+
+    <p id="materialResult"></p>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="hidden">
+
+    <h2>Contact Us</h2>
+
+    <form onsubmit="contactForm(event)">
+
+        <input type="text"
+               id="contactName"
+               placeholder="Your Name"
+               required>
+
+        <br>
+
+        <input type="email"
+               id="contactEmail"
+               placeholder="Your Email"
+               required>
+
+        <br>
+
+        <textarea id="messageText"
+                  placeholder="Your Message"
+                  rows="5"
+                  cols="40"></textarea>
+
+        <br>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+    <p id="contactResult"></p>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+-------------------------------------------------------------
+body {
+    font-family: Arial;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    background-color: #555;
+    padding: 12px;
+    text-align: center;
+}
+
+nav button {
+    background-color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+/* SECTIONS */
+
+section {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+
+/* INPUTS */
+
+input,
+select {
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+}
+
+
+/* BUTTONS */
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+
+/* BOOK CARD */
+
+.book {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+
+/* TABLE */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #ddd;
+}
+
+
+/* HIDE SECTION */
+
+.hidden {
+    display: none;
+}
+
+
+/* MESSAGES */
+
+#registerMessage,
+#loginMessage,
+#contactResult,
+#fineResult {
+    color: green;
+    font-weight: bold;
+}
+--------------------------------------------------------------
+/* SHOW SECTION */
+
+function showSection(sectionName) {
+
+    let sections = document.querySelectorAll("section");
+
+    sections.forEach(function(section) {
+        section.classList.add("hidden");
+    });
+
+    document.getElementById(sectionName)
+            .classList.remove("hidden");
+}
+
+
+/* SEARCH BOOK */
+
+function searchBooks() {
+
+    let input =
+        document.getElementById("searchBook")
+        .value.toLowerCase();
+
+    let books =
+        document.getElementById("bookList")
+        .getElementsByClassName("book");
+
+    for(let i = 0; i < books.length; i++) {
+
+        let text =
+            books[i].innerText.toLowerCase();
+
+        if(text.includes(input)) {
+
+            books[i].style.display = "block";
+
+        }
+        else {
+
+            books[i].style.display = "none";
+
+        }
+    }
+}
+
+
+/* VIEW BOOK DETAILS */
+
+function viewBook(name) {
+
+    document.getElementById("bookDetails").innerHTML =
+        "<b>Book Details:</b><br>" +
+        "Book Name: " + name + "<br>" +
+        "Available: Yes<br>" +
+        "You can issue this book from the library.";
+}
+
+
+/* REGISTER */
+
+function register() {
+
+    let name =
+        document.getElementById("regName").value;
+
+    let email =
+        document.getElementById("regEmail").value;
+
+    let password =
+        document.getElementById("regPassword").value;
+
+
+    if(name === "" || email === "" || password === "") {
+
+        document.getElementById("registerMessage").innerHTML =
+            "Please fill all fields.";
+
+    }
+    else {
+
+        document.getElementById("registerMessage").innerHTML =
+            "Registration Successful!";
+
+    }
+}
+
+
+/* LOGIN */
+
+function login() {
+
+    let email =
+        document.getElementById("loginEmail").value;
+
+    let password =
+        document.getElementById("loginPassword").value;
+
+
+    if(email === "" || password === "") {
+
+        document.getElementById("loginMessage").innerHTML =
+            "Please enter email and password.";
+
+    }
+    else {
+
+        document.getElementById("loginMessage").innerHTML =
+            "Login Successful!";
+
+    }
+}
+
+
+/* ADD BOOK */
+
+function addBook() {
+
+    let book =
+        document.getElementById("newBook").value;
+
+
+    if(book === "") {
+
+        alert("Enter book name");
+
+        return;
+    }
+
+
+    let div = document.createElement("div");
+
+    div.className = "book";
+
+    div.innerHTML =
+        "<h3>" + book + "</h3>" +
+        "<p>Available: Yes</p>";
+
+
+    document.getElementById("adminBookList")
+            .appendChild(div);
+
+
+    document.getElementById("newBook").value = "";
+}
+
+
+/* ISSUE BOOK */
+
+function issueBook() {
+
+    let student =
+        document.getElementById("studentName").value;
+
+    let book =
+        document.getElementById("issueBook").value;
+
+
+    if(student === "" || book === "") {
+
+        alert("Enter student and book details");
+
+        return;
+    }
+
+
+    alert(
+        "Book Issued Successfully!\n" +
+        "Student: " + student +
+        "\nBook: " + book
+    );
+}
+
+
+/* FINE CALCULATION */
+
+function calculateFine() {
+
+    let days =
+        Number(document.getElementById("lateDays").value);
+
+    let fine = days * 10;
+
+
+    document.getElementById("fineResult").innerHTML =
+        "Fine Amount = ₹" + fine;
+}
+
+
+/* MATERIAL SEARCH */
+
+function searchMaterial() {
+
+    let year =
+        document.getElementById("materialYear").value;
+
+    let semester =
+        document.getElementById("semester").value;
+
+
+    document.getElementById("materialResult").innerHTML =
+        "Materials available for Year " +
+        year +
+        ", Semester " +
+        semester +
+        "<br><br>" +
+        "<button>Download Material</button>";
+}
+
+
+/* CONTACT FORM */
+
+function contactForm(event) {
+
+    event.preventDefault();
+
+
+    let name =
+        document.getElementById("contactName").value;
+
+
+    document.getElementById("contactResult").innerHTML =
+        "Thank you " + name +
+        "! Your message has been submitted.";
+}
