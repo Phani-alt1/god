@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin - Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="books.html">Books</a>
+    <a href="history.html">History</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>Add Book</h2>
+
+    <input id="bookName" placeholder="Book name">
+
+    <input id="author" placeholder="Author">
+
+    <input id="bookYear" placeholder="Year">
+
+    <button onclick="addBook()">
+        Add Book
+    </button>
+
+</div>
+
+
+<div class="box">
+
+    <h2>Book Management</h2>
+
+    <p>Add, Update and Delete books.</p>
+
+    <div id="adminBooks">
+
+        <div class="book">
+
+            <b>JavaScript Basics</b>
+
+            <button onclick="updateBook(this)">
+                Update
+            </button>
+
+            <button onclick="deleteBook(this)">
+                Delete
+            </button>
+
+        </div>
+
+
+        <div class="book">
+
+            <b>HTML and CSS</b>
+
+            <button onclick="updateBook(this)">
+                Update
+            </button>
+
+            <button onclick="deleteBook(this)">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Books - Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Library Books</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="books.html">Books</a>
+    <a href="history.html">History</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>Search Books</h2>
+
+    <input type="text"
+           id="search"
+           placeholder="Search book"
+           onkeyup="searchBooks()">
+
+</div>
+
+
+<div class="box" id="books">
+
+    <div class="book">
+
+        <h3>JavaScript Basics</h3>
+
+        <p>Author: John | Year: 2024</p>
+
+        <button onclick="issueBook('JavaScript Basics')">
+            Issue
+        </button>
+
+    </div>
+
+
+    <div class="book">
+
+        <h3>HTML and CSS</h3>
+
+        <p>Author: David | Year: 2023</p>
+
+        <button onclick="issueBook('HTML and CSS')">
+            Issue
+        </button>
+
+    </div>
+
+
+    <div class="book">
+
+        <h3>Web Programming</h3>
+
+        <p>Author: Robert | Year: 2022</p>
+
+        <button onclick="issueBook('Web Programming')">
+            Issue
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="box">
+
+    <h2>Study Material</h2>
+
+    <select id="year">
+
+        <option value="">Year</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+
+    </select>
+
+
+    <select id="semester">
+
+        <option value="">Semester</option>
+        <option>1</option>
+        <option>2</option>
+
+    </select>
+
+
+    <button onclick="searchMaterial()">
+        Search
+    </button>
+
+    <p id="material"></p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
