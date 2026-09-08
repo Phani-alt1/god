@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Orders - StyleHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>My Orders</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="products.html">Products</a>
+    <a href="orders.html">Orders</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>Order History</h2>
+
+    <table>
+
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Status</th>
+        </tr>
+
+        <tbody id="orderHistory">
+        </tbody>
+
+    </table>
+
+</div>
+
+
+<div class="box">
+
+    <h2>Order Status</h2>
+
+    <p id="orderStatus">
+        No order placed yet.
+    </p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+    showOrders();
+</script>
+
+</body>
+</html>

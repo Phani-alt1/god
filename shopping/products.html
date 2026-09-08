@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Products - StyleHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>StyleHub Products</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="products.html">Products</a>
+    <a href="orders.html">Orders</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>Product Catalogue</h2>
+
+    <input type="text"
+           id="productSearch"
+           placeholder="Search product"
+           onkeyup="searchProducts()">
+
+</div>
+
+
+<div class="box" id="productList">
+
+    <div class="book">
+
+        <h3>T-Shirt</h3>
+
+        <p>Price: ₹500</p>
+
+        <p>Available: Yes</p>
+
+        <button onclick="addToCart('T-Shirt', 500)">
+            Add to Cart
+        </button>
+
+    </div>
+
+
+    <div class="book">
+
+        <h3>Jeans</h3>
+
+        <p>Price: ₹1200</p>
+
+        <p>Available: Yes</p>
+
+        <button onclick="addToCart('Jeans', 1200)">
+            Add to Cart
+        </button>
+
+    </div>
+
+
+    <div class="book">
+
+        <h3>Jacket</h3>
+
+        <p>Price: ₹2000</p>
+
+        <p>Available: Yes</p>
+
+        <button onclick="addToCart('Jacket', 2000)">
+            Add to Cart
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="box">
+
+    <h2>My Cart</h2>
+
+    <div id="cart"></div>
+
+    <h3 id="total"></h3>
+
+    <button onclick="checkout()">
+        Checkout
+    </button>
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+    showCart();
+</script>
+
+</body>
+</html>

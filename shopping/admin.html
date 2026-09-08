@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin - StyleHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>StyleHub Admin Dashboard</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="products.html">Products</a>
+    <a href="orders.html">Orders</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>Add Product</h2>
+
+    <input type="text"
+           id="productName"
+           placeholder="Product Name">
+
+    <input type="number"
+           id="productPrice"
+           placeholder="Price">
+
+    <input type="text"
+           id="productAvailability"
+           placeholder="Availability">
+
+    <button onclick="addProduct()">
+        Add Product
+    </button>
+
+</div>
+
+
+<div class="box">
+
+    <h2>Manage Products</h2>
+
+    <div id="adminProducts">
+
+        <div class="book">
+
+            <b>T-Shirt</b>
+            <p>₹500</p>
+
+            <button onclick="updateProduct(this)">
+                Update
+            </button>
+
+            <button onclick="deleteProduct(this)">
+                Delete
+            </button>
+
+        </div>
+
+
+        <div class="book">
+
+            <b>Jeans</b>
+            <p>₹1200</p>
+
+            <button onclick="updateProduct(this)">
+                Update
+            </button>
+
+            <button onclick="deleteProduct(this)">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StyleHub Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>StyleHub</h1>
+    <p>Online Fashion Shopping</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="products.html">Products</a>
+    <a href="orders.html">Orders</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+<div class="box">
+
+    <h2>Search Products</h2>
+
+    <input type="text"
+           id="search"
+           placeholder="Search product"
+           onkeyup="searchProducts()">
+
+    <button onclick="searchProducts()">
+        Search
+    </button>
+
+</div>
+
+<div class="box">
+
+    <h2>Welcome to StyleHub</h2>
+
+    <p>
+        Browse products, add items to cart,
+        checkout and manage your orders.
+    </p>
+
+    <a class="btn" href="products.html">
+        View Products
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
