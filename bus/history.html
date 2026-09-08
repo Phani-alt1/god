@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Booking History</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="buses.html">Buses</a>
+    <a href="history.html">History</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>My Bookings</h2>
+
+    <table>
+
+        <tr>
+            <th>Bus</th>
+            <th>Passenger</th>
+            <th>Seat</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        <tbody id="bookingHistory">
+        </tbody>
+
+    </table>
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+    showBookingHistory();
+</script>
+
+</body>
+</html>

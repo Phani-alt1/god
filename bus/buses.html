@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Available Buses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Available Buses</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="buses.html">Buses</a>
+    <a href="history.html">History</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>Bus List</h2>
+
+    <div class="book">
+
+        <h3>Express Travels</h3>
+
+        <p>Route: Ongole → Chennai</p>
+
+        <p>Time: 8:00 AM</p>
+
+        <p>Available Seats: 20</p>
+
+        <button onclick="bookBus('Express Travels')">
+            Book Now
+        </button>
+
+    </div>
+
+
+    <div class="book">
+
+        <h3>Green Line Travels</h3>
+
+        <p>Route: Ongole → Hyderabad</p>
+
+        <p>Time: 9:00 PM</p>
+
+        <p>Available Seats: 15</p>
+
+        <button onclick="bookBus('Green Line Travels')">
+            Book Now
+        </button>
+
+    </div>
+
+
+    <div class="book">
+
+        <h3>Orange Travels</h3>
+
+        <p>Route: Chennai → Bangalore</p>
+
+        <p>Time: 10:00 PM</p>
+
+        <p>Available Seats: 12</p>
+
+        <button onclick="bookBus('Orange Travels')">
+            Book Now
+        </button>
+
+    </div>
+
+</div>
+
+
+<div class="box">
+
+    <h2>Passenger Details</h2>
+
+    <input type="text"
+           id="passenger"
+           placeholder="Passenger Name">
+
+    <input type="number"
+           id="age"
+           placeholder="Age">
+
+    <select id="seat">
+
+        <option value="">Select Seat</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+
+    </select>
+
+    <button onclick="confirmBooking()">
+        Confirm Booking
+    </button>
+
+    <p id="bookingResult"></p>
+
+</div>
+<div class="box">
+
+    <h2>Available Buses</h2>
+
+    <div id="busList"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    showBuses();
+</script>
+
+</body>
+</html>

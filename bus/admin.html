@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin - Bus Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Bus Admin Dashboard</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="buses.html">Buses</a>
+    <a href="history.html">History</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+
+<div class="box">
+
+    <h2>Add Bus</h2>
+
+    <input type="text"
+           id="busName"
+           placeholder="Bus Name">
+
+    <input type="text"
+           id="route"
+           placeholder="Route">
+
+    <input type="text"
+           id="time"
+           placeholder="Time">
+
+    <input type="number"
+           id="seats"
+           placeholder="Available Seats">
+
+    <button onclick="addBus()">
+        Add Bus
+    </button>
+
+</div>
+
+
+<div class="box">
+
+    <h2>Manage Buses</h2>
+
+    <div id="adminBuses">
+
+        <div class="book">
+
+            <b>Express Travels</b>
+
+            <button onclick="updateBus(this)">
+                Update
+            </button>
+
+            <button onclick="deleteBus(this)">
+                Delete
+            </button>
+
+        </div>
+
+
+        <div class="book">
+
+            <b>Green Line Travels</b>
+
+            <button onclick="updateBus(this)">
+                Update
+            </button>
+
+            <button onclick="deleteBus(this)">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
